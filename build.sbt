@@ -43,11 +43,12 @@ libraryDependencies ++= Seq(
   "org.scalikejdbc"        %% "scalikejdbc"                  % "2.5.2",
   "org.scalikejdbc"        %% "scalikejdbc-config"           % "2.5.2",
   "org.scalikejdbc"        %% "scalikejdbc-test"             % "2.5.2" % Test,
-  "org.scalikejdbc"        %% "scalikejdbc-jsr310"           % "2.5.2", // 追加
+  "org.scalikejdbc"        %% "scalikejdbc-jsr310"           % "2.5.2",
   "org.skinny-framework"   %% "skinny-orm"                   % "2.3.7",
   "org.scalikejdbc"        %% "scalikejdbc-play-initializer" % "2.5.+",
   "ch.qos.logback"         % "logback-classic"               % "1.2.3",
-  "mysql"                  % "mysql-connector-java"          % "6.0.6" // 追加
+  "mysql"                  % "mysql-connector-java"          % "6.0.6",
+  "com.adrianhurt"         %% "play-bootstrap"               % "1.1-P25-B3"
 
 )
 
@@ -69,3 +70,5 @@ flywayDriver := envConfig.value.getString("jdbcDriver")
 flywayUrl := envConfig.value.getString("jdbcUrl")
 flywayUser := envConfig.value.getString("jdbcUserName")
 flywayPassword := envConfig.value.getString("jdbcPassword")
+
+TwirlKeys.templateImports ++= Seq("forms._")
